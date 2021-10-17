@@ -8,18 +8,22 @@
 */
 
 //Variables
-const randomLetter = getElementById('qwerty');
-const randomPhrase = getElementById('phrase');
+const randomLetter = document.getElementById('qwerty');
+const randomPhrase = document.getElementById('phrase');
 const missed = 0;
-const overlay = getElementById('overlay');
+const overlay = document.getElementById('overlay');
+const btnReset = document.querySelector('.btn__reset');
 //Can I put the overlay var inside of the event listner?
 
 //Creating event listner to hide start game overlay screen
-overlay.addEventListener('click', () => {
+btnReset.addEventListener('click', ()=> {
     overlay.style.display = 'none';
     //what do I name my return?
 });
 
+console.log('This code is working');
+
 
 //Phrases array 
 const phrases = ['Apple', 'Orange', 'Kiwi', 'Almond', 'Garlic']
+
