@@ -18,26 +18,31 @@ btnReset.addEventListener('click', ()=> {
 const phrases = ['Apple', 'Orange', 'Kiwi', 'Almond', 'Garlic']
 
 //Creating a function to select an val from array at random
-function getRandomPhraseAsArray(arr) {
-    const randomPhraseNumber = Math.floor(Math.random()*phrases.length);
-    return phrases[randomPhraseNumber].split(" ");
+getRandomPhraseAsArray = () => {
+    const randomPhraseNumber = Math.floor(Math.random()*arr.length);
+    return phrases[randomPhraseNumber].split("");
 };
 
+
+
 // Displaying the randmonly selected array phrase
-function addPhraseToDisplay(arr) {
+addPhraseToDisplay = () => {
     //1. for each character in the array, you’ll create a list item,
     //2. append that list item to the #phrase ul
     //3. If the character in the array is a letter and not a space, 
     //the function should add the class “letter” to the list item.
 
-    const phrase = addPhraseToDisplay();
+    const phraseArray = addPhraseToDisplay();
     const ul = document.querySelectorAll('#phrase ul');
 
     for (let i = 0; i < phrases.length; i++); {
-        //why do you create in elemnt with the for loop?
-        let li = document.createElement('li');
-        li.appendChild('ul');
+            let li = document.createElement('li');
+        
 
+        if (randomPhrase === 'phrases') {
+            li.appendChild('')
+
+    
     }
 
 
