@@ -1,7 +1,6 @@
 
 //Variables
 const randomLetter = document.querySelectorAll('qwerty');
-const randomPhrase = document.querySelector('phrase');
 const missed = 0;
 const overlay = document.getElementById('overlay');
 const btnReset = document.querySelector('.btn__reset');
@@ -18,35 +17,50 @@ btnReset.addEventListener('click', ()=> {
 const phrases = ['Apple', 'Orange', 'Kiwi', 'Almond', 'Garlic']
 
 //Creating a function to select an val from array at random
-getRandomPhraseAsArray = () => {
+getRandomPhraseAsArray = (arr) => {
     const randomPhraseNumber = Math.floor(Math.random()*arr.length);
-    return phrases[randomPhraseNumber].split("");
+    return arr[randomPhraseNumber].split("");
 };
 
+//Create a variable to access the getRandomPhraseAsArray function
+/*The getRandomPhraseAsArray function is already getting the random split 
+character and you're passing the phrases as an arugment(value) into that function
+*/
+const randomPhrase = getRandomPhraseAsArray(phrases);
 
 
 // Displaying the randmonly selected array phrase
-addPhraseToDisplay = () => {
-    //1. for each character in the array, you’ll create a list item,
-    //2. append that list item to the #phrase ul
-    //3. If the character in the array is a letter and not a space, 
-    //the function should add the class “letter” to the list item.
-
-    const phraseArray = addPhraseToDisplay();
-    const ul = document.querySelectorAll('#phrase ul');
-
+const addPhraseToDisplay = arr => {
     for (let i = 0; i < phrases.length; i++); {
-            let li = document.createElement('li');
-        
+        const characterList = document.querySelector('ul');
+        const item = document.createElement('li');
+        item.textContent = input.value;
+        /*The JavaScript input text property is used to set or return the value of a text input field. */
+        input.value = '';
+        characterList.append(li);
 
-        if (randomPhrase === 'phrases') {
-            li.appendChild('')
+    if (phrase[i] === '') {
+        li.className('letter');
+        }
 
-    
+        else {
+            li.className('space');
+        }
+        return addPhrasetoDisplay(phraseArray);
     }
 
+};
 
 
+// Creating checkLetter function 
+
+  const checkLetter = (button) => {
+    const checkLetter = docuemnt.querySelectorAll('li.letters');
+    letterMatch = null;
+
+    for (let i = 0; i < letters.length; i++) {
+
+    }
 
 
 };
