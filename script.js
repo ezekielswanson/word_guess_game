@@ -39,7 +39,7 @@ const addPhraseToDisplay = arr => {
         input.value = '';
         characterList.append(li);
 
-    if (phrase[i] === '') {
+    if (arr[i] === '') {
         li.className('letter');
         }
 
