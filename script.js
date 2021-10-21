@@ -31,7 +31,7 @@ const randomPhrase = getRandomPhraseAsArray(phrases);
 
 // Displaying the randmonly selected array phrase
 const addPhraseToDisplay = arr => {
-    for (let i = 0; i < phrases.length; i++); {
+    for (let i = 0; i < arr.length; i++); {
         const characterList = document.querySelector('ul');
         const item = document.createElement('li');
         item.textContent = input.value;
