@@ -33,11 +33,22 @@ const randomPhrase = getRandomPhraseAsArray(phrases);
 const addPhraseToDisplay = arr => {
     for (let i = 0; i < arr.length; i++); {
         const characterList = document.querySelector('ul');
+<<<<<<< HEAD
         const item = document.createElement('li').textContent;
         characterList.appendChild(item);
 
     if (arr[i] === '') {
             arr.className('letter');
+=======
+        const item = document.createElement('li');
+        item.textContent = input.value;
+        /*The JavaScript input text property is used to set or return the value of a text input field. */
+        input.value = '';
+        characterList.append(li);
+
+    if (arr[i] === '') {
+        li.className('letter');
+>>>>>>> 53258842c19161a3344006acc0384afd8cc7036b
         }
 
         else {
