@@ -31,22 +31,18 @@ const randomPhrase = getRandomPhraseAsArray(phrases);
 
 // Displaying the randmonly selected array phrase
 const addPhraseToDisplay = arr => {
-    for (let i = 0; i < phrases.length; i++); {
+    for (let i = 0; i < arr.length; i++); {
         const characterList = document.querySelector('ul');
-        const item = document.createElement('li');
-        item.textContent = input.value;
-        /*The JavaScript input text property is used to set or return the value of a text input field. */
-        input.value = '';
-        characterList.append(li);
+        const item = document.createElement('li').textContent;
+        characterList.appendChild(item);
 
-    if (phrase[i] === '') {
-        li.className('letter');
+    if (arr[i] === '') {
+            arr.className('letter');
         }
 
         else {
-            li.className('space');
+            arr.className('space');
         }
-        return addPhrasetoDisplay(phraseArray);
     }
 
 };
@@ -54,11 +50,16 @@ const addPhraseToDisplay = arr => {
 
 // Creating checkLetter function 
 
-  const checkLetter = (button) => {
-    const checkLetter = docuemnt.querySelectorAll('li.letters');
+const checkLetter = (button) => {
+    const checkLetter = document.getElementByClassName('li.letter');
     letterMatch = null;
 
-    for (let i = 0; i < letters.length; i++) {
+    for (let i = 0; i < letter.length; i++) {
+        if (button === letterMatch) {
+            
+
+        }
+
 
     }
 
