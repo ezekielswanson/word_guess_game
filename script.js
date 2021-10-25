@@ -14,7 +14,7 @@ btnReset.addEventListener('click', ()=> {
 
 
 //Phrases array 
-const phrases = ['Apple', 'Orange', 'Kiwi', 'Almond', 'Garlic']
+const phrases = ['Apples to Oranges', 'The day is young', "If you're not first you're last", 'Ricky Bobby', "The early bird get's the worm"]
 
 //Creating a function to select an val from array at random
 getRandomPhraseAsArray = (arr) => {
@@ -27,7 +27,7 @@ getRandomPhraseAsArray = (arr) => {
 character and you're passing the phrases as an arugment(value) into that function
 */
 const randomPhrase = getRandomPhraseAsArray(phrases);
-/*Will call this randomphrase as a argument value 
+/*Will call this randomphrase as a argument 
 when I call addPhraseToDisplay and use randomPhrase I'm 
 switching out arr for randomPhrase value
 */
@@ -37,15 +37,15 @@ switching out arr for randomPhrase value
 // Displaying the randmonly selected array phrase
 //display characters on page 
 const addPhraseToDisplay = arr => {
+
         for (let i = 0; i < arr.length; i++) {
             const characterList = document.querySelector('#phrase ul');
             const item = document.createElement('li');
            
     
         if (arr[i] === '') {
-                arr.className('letter');
-            const item = document.createElement('li').textContent;
-            characterList.append(li);
+            arr.className('letter');
+     
         }
 
         if (arr[i] === '') {
@@ -66,4 +66,5 @@ const addPhraseToDisplay = arr => {
 }
 
 
-addPhraseToDisplay();
+addPhraseToDisplay(randomPhrase);
+
