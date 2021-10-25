@@ -27,52 +27,46 @@ getRandomPhraseAsArray = (arr) => {
 character and you're passing the phrases as an arugment(value) into that function
 */
 const randomPhrase = getRandomPhraseAsArray(phrases);
+/*Will call this randomphrase as a argument value 
+when I call addPhraseToDisplay and use randomPhrase I'm 
+switching out arr for randomPhrase value
+*/
+
 
 
 // Displaying the randmonly selected array phrase
+//display characters on page 
 const addPhraseToDisplay = arr => {
-    for (let i = 0; i < arr.length; i++); {
-        const characterList = document.querySelector('ul');
-<<<<<<< HEAD
-        const item = document.createElement('li').textContent;
-        characterList.appendChild(item);
+        for (let i = 0; i < arr.length; i++) {
+            const characterList = document.querySelector('#phrase ul');
+            const item = document.createElement('li');
+           
+    
+        if (arr[i] === '') {
+                arr.className('letter');
+            const item = document.createElement('li');
+            item.textContent = input.value;
+            /*The JavaScript input text property is used to set or return the value of a text input field. */
+            input.value = '';
+            characterList.append(li);
+        }
 
-    if (arr[i] === '') {
-            arr.className('letter');
-=======
-        const item = document.createElement('li');
-        item.textContent = input.value;
-        /*The JavaScript input text property is used to set or return the value of a text input field. */
-        input.value = '';
-        characterList.append(li);
+        if (arr[i] === '') {
+            item.classList.add('letter');
 
-    if (arr[i] === '') {
-        li.className('letter');
->>>>>>> 53258842c19161a3344006acc0384afd8cc7036b
         }
 
         else {
-            arr.className('space');
-        }
-    }
-
-};
-
-
-// Creating checkLetter function 
-
-const checkLetter = (button) => {
-    const checkLetter = document.getElementByClassName('li.letter');
-    letterMatch = null;
-
-    for (let i = 0; i < letter.length; i++) {
-        if (button === letterMatch) {
-            
-
+            item.classList.add('space');
+    
         }
 
 
+        /*After conditionals then add to ul */
+        characterList.appendChild(item);
     }
 
+}
 
-};
+
+addPhraseToDisplay();
