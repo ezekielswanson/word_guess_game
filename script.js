@@ -44,10 +44,7 @@ const addPhraseToDisplay = arr => {
     
         if (arr[i] === '') {
                 arr.className('letter');
-            const item = document.createElement('li');
-            item.textContent = input.value;
-            /*The JavaScript input text property is used to set or return the value of a text input field. */
-            input.value = '';
+            const item = document.createElement('li').textContent;
             characterList.append(li);
         }
 
