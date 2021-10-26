@@ -41,20 +41,21 @@ const addPhraseToDisplay = arr => {
         for (let i = 0; i < arr.length; i++) {
             const characterList = document.querySelector('#phrase ul');
             const item = document.createElement('li');
+
            
     
         if (arr[i] === '') {
-            arr.className('letter');
+            item.className('letter');
      
         }
 
         if (arr[i] === '') {
-            item.classList.add('letter');
+            item.className('letter');
 
         }
 
         else {
-            item.classList.add('space');
+            item.className('space');
     
         }
 
@@ -65,6 +66,32 @@ const addPhraseToDisplay = arr => {
 
 }
 
-
 addPhraseToDisplay(randomPhrase);
+
+
+
+/*Working through 
+// Creating checkLetter function
+ 
+const checkLetter = (button) => {
+   const letterClass = document.getElementByClassName('.letter');
+   letterMatch = null;
+ 
+   for (let i = 0; i < letter.length; i++) {
+       if (letterClass[i] === button ) {
+            letterClass.className('show');
+            const matchedLetter = '';
+            return matchedLetter;
+       }
+
+       else {
+           return letterMatch;
+       }
+ 
+ 
+   }
+};
+*/
+
+
 
