@@ -42,21 +42,19 @@ const addPhraseToDisplay = arr => {
             const characterList = document.querySelector('#phrase ul');
             const item = document.createElement('li');
 
-           
     
         if (arr[i] === '') {
-            item.className('letter');
+            item.className = 'letter';
      
         }
 
         if (arr[i] === '') {
-            item.className('letter');
+            item.className = 'letter';
 
         }
 
         else {
-            item.className('space');
-    
+            item.className = 'space';
         }
 
 
@@ -70,7 +68,7 @@ addPhraseToDisplay(randomPhrase);
 
 
 
-/*Working through 
+
 // Creating checkLetter function
  
 const checkLetter = (button) => {
@@ -79,7 +77,7 @@ const checkLetter = (button) => {
  
    for (let i = 0; i < letter.length; i++) {
        if (letterClass[i] === button ) {
-            letterClass.className('show');
+            letterClass.className = 'show';
             const matchedLetter = '';
             return matchedLetter;
        }
@@ -91,7 +89,18 @@ const checkLetter = (button) => {
  
    }
 };
-*/
 
+//Creating event listner 
+//Using e because we want target the button elemenet only 
+
+randomLetter.addEventListener('click',(e)=> {
+    if (e.target.tagName === 'button') {
+            e.target.tagName = 'chosen';
+            const selectedButton = checkLetter();
+    }
+
+
+
+});
 
 
