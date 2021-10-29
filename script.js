@@ -86,10 +86,10 @@ const checkLetter = (button) => {
        else {
            return letterMatch;
        }
- 
- 
    }
 };
+
+//What argument do I pass to this function?
 
 //Creating event listner 
 //Using e because we want target the button elemenet only 
@@ -100,15 +100,22 @@ randomLetter.addEventListener('click',(e)=> {
             const selectedButton = checkLetter();
     }
     
+   //
+   if (checkLetter === null )
+   
     else {
         //Do I declare the var outside of the if then statement?
         removeHeartImage = getElementByClassName('.tries');
         removeHeartImage.remove();
         const missed = '';
-
     }
 
 
 });
+
+
+//Checkwin Function
+
+const checkWin = (arr)
 
 
