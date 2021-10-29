@@ -36,7 +36,7 @@ switching out arr for randomPhrase value
 
 // Displaying the randmonly selected array phrase
 //display characters on page 
-const addPhraseToDisplay = arr => {
+const addPhraseToDisplay = (arr) => {
 
         for (let i = 0; i < arr.length; i++) {
             const characterList = document.querySelector('#phrase ul');
@@ -58,13 +58,14 @@ const addPhraseToDisplay = arr => {
         }
 
 
-        /*After conditionals then add to ul */
+        /*After conditionals run append classe name add to ul */
         characterList.appendChild(item);
     }
 
 }
 
 addPhraseToDisplay(randomPhrase);
+
 
 
 
@@ -98,7 +99,14 @@ randomLetter.addEventListener('click',(e)=> {
             e.target.tagName = 'chosen';
             const selectedButton = checkLetter();
     }
+    
+    else {
+        //Do I declare the var outside of the if then statement?
+        removeHeartImage = getElementByClassName('.tries');
+        removeHeartImage.remove();
+        const missed = '';
 
+    }
 
 
 });
