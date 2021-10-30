@@ -36,63 +36,69 @@ switching out arr for randomPhrase value
 
 // Displaying the randmonly selected array phrase
 //display characters on page 
+/*If this person is not zeke do this
+for 2 options
+*/
 const addPhraseToDisplay = (arr) => {
 
         for (let i = 0; i < arr.length; i++) {
             const characterList = document.querySelector('#phrase ul');
             const item = document.createElement('li');
 
-    
-        if (arr[i] === '') {
-            item.className = 'letter';
+
+
+        //Space b/w quatation marks rep a space 
+        //if you want actual word 
+        if (arr[i] !== ' ') {
+
+            item.classList.add('letter');
+            item.textContent = arr[i];    
+        }
+
+        console.log(item);
      
+
+
+        if (arr[i] === ' ') {
+            item.classList.add('space');
         }
 
-        if (arr[i] === '') {
-            item.className = 'letter';
-
-        }
-
-        else {
-            item.className = 'space';
-        }
-
-
-        /*After conditionals run append classe name add to ul */
         characterList.appendChild(item);
+        
     }
 
 }
 
+
 addPhraseToDisplay(randomPhrase);
-
-
 
 
 
 // Creating checkLetter function
  
 const checkLetter = (button) => {
-   const letterClass = document.getElementByClassName('.letter');
+   const letterClass = document.getElementByClassName('letter');
    letterMatch = null;
  
-   for (let i = 0; i < letter.length; i++) {
-       if (letterClass[i] === button ) {
-            letterClass.className = 'show';
-            const matchedLetter = '';
-            return matchedLetter;
+   //Are we looping through the letterClass list?
+   for (let i = 0; i < letterClass.length; i++) {
+
+       if (letterClass[i].textContent === button.textContent ) {
+           letterClass.classList.add('show');
+           const match = letterClass;
        }
 
-       else {
-           return letterMatch;
-       }
-   }
-};
+       return match;
+    
+   };
+
 
 //What argument do I pass to this function?
 
 //Creating event listner 
 //Using e because we want target the button elemenet only 
+
+/*
 
 randomLetter.addEventListener('click',(e)=> {
     if (e.target.tagName === 'button') {
@@ -100,7 +106,7 @@ randomLetter.addEventListener('click',(e)=> {
             const selectedButton = checkLetter();
     }
     
-   //
+   /*
    if (checkLetter === null )
    
     else {
@@ -109,7 +115,9 @@ randomLetter.addEventListener('click',(e)=> {
         removeHeartImage.remove();
         const missed = '';
     }
+    */
 
+    /*
 
 });
 
@@ -118,4 +126,5 @@ randomLetter.addEventListener('click',(e)=> {
 
 const checkWin = (arr)
 
+*/
 
