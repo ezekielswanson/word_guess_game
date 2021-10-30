@@ -55,9 +55,8 @@ const addPhraseToDisplay = (arr) => {
             item.textContent = arr[i];    
         }
 
-        console.log(item);
-     
-
+    
+    
 
         if (arr[i] === ' ') {
             item.classList.add('space');
