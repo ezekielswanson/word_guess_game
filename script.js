@@ -1,6 +1,6 @@
 
 //Variables
-const randomLetter = document.querySelectorAll('qwerty');
+const qwerty = document.querySelectorAll('qwerty');
 const missed = 0;
 const overlay = document.getElementById('overlay');
 const btnReset = document.querySelector('.btn__reset');
@@ -82,28 +82,45 @@ const checkLetter = (button) => {
    //Are we looping through the letterClass list?
    for (let i = 0; i < letterClass.length; i++) {
 
-       if (letterClass[i].textContent === button.textContent ) {
+       if ( letterClass[i].textContent === button.textContent ) {
            letterClass.classList.add('show');
            const match = letterClass;
+           return match;
        }
 
-       return match;
+       else {
+           return null;
+       }
     
    };
 
 
-//What argument do I pass to this function?
+//What argument do I pass to this function? or do we pass anything to it?
+//We're not passing an argument into this function because letterClass 
+//using the data from the array
+
+
+
 
 //Creating event listner 
 //Using e because we want target the button elemenet only 
 
-/*
-
-randomLetter.addEventListener('click',(e)=> {
+qwerty.addEventListener('click',(e)=> {
     if (e.target.tagName === 'button') {
-            e.target.tagName = 'chosen';
-            const selectedButton = checkLetter();
+        //Where doe button come into play on the method?
+        e.taget.tagName.classList.add('chosen');
     }
+
+    const selectedButton = checkLetter();
+
+
+//Do we we use match or button here?
+    if ( selectedButton !== 'button' ) {
+        document.getElementsByTagName('img').remove();
+        missed += 1;
+
+    }
+}
     
    /*
    if (checkLetter === null )
