@@ -107,7 +107,7 @@ const checkLetter = (button) => {
 
 qwerty.addEventListener('click',(e)=> {
     if (e.target.tagName === 'button') {
-        //Where doe button come into play on the method?
+        //Where does button come into play on the method?
         e.taget.tagName.classList.add('chosen');
     }
 
@@ -122,25 +122,3 @@ qwerty.addEventListener('click',(e)=> {
     }
 }
     
-   /*
-   if (checkLetter === null )
-   
-    else {
-        //Do I declare the var outside of the if then statement?
-        removeHeartImage = getElementByClassName('.tries');
-        removeHeartImage.remove();
-        const missed = '';
-    }
-    */
-
-    /*
-
-});
-
-
-//Checkwin Function
-
-const checkWin = (arr)
-
-*/
-
