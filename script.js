@@ -1,6 +1,6 @@
 
 //Variables
-const qwerty = document.querySelectorAll('qwerty');
+const qwerty = document.getElementById('qwerty');
 const missed = 0;
 const overlay = document.getElementById('overlay');
 const btnReset = document.querySelector('.btn__reset');
@@ -10,7 +10,6 @@ const btnReset = document.querySelector('.btn__reset');
 btnReset.addEventListener('click', ()=> {
     overlay.style.display = 'none';
 });
-
 
 
 //Phrases array 
@@ -55,8 +54,7 @@ const addPhraseToDisplay = (arr) => {
             item.textContent = arr[i];    
         }
 
-    
-    
+
 
         if (arr[i] === ' ') {
             item.classList.add('space');
@@ -93,7 +91,7 @@ const checkLetter = (button) => {
        }
     
    };
-
+}
 
 //What argument do I pass to this function? or do we pass anything to it?
 //We're not passing an argument into this function because letterClass 
@@ -105,7 +103,8 @@ const checkLetter = (button) => {
 //Creating event listner 
 //Using e because we want target the button elemenet only 
 
-qwerty.addEventListener('click',(e)=> {
+qwerty.addEventListener('click', (e) => {
+
     if (e.target.tagName === 'button') {
         //Where does button come into play on the method?
         e.taget.tagName.classList.add('chosen');
@@ -113,12 +112,35 @@ qwerty.addEventListener('click',(e)=> {
 
     const selectedButton = checkLetter();
 
-
-//Do we we use match or button here?
     if ( selectedButton !== 'button' ) {
         document.getElementsByTagName('img').remove();
         missed += 1;
+    }
+
+});
+
+//Why doesn't this have a parameter?
+const checkWin = () => {
+    const letterClassMatch = 'letter';
+    const showClassMatch = 'show';
+
+    if ( letterClassMatch === showClassMatch ) {
+        overlay.className.add('win');
+        //change this 
+        document.getElementByClassName("title").innerHTML = "You won!";
+        overlay.style.display = "flex";
+    }
+
+    if ( missed > 4 ) {
+        overlay.className.add('lose');
+        document.getElementByClassName("title").innerHTML = "You lost!";
+      overlay.style.display = "flex";
 
     }
+
 }
-    
+
+
+
+
+
