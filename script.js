@@ -68,7 +68,7 @@ const addPhraseToDisplay = (arr) => {
 
 
 addPhraseToDisplay(randomPhrase);
-ok
+
 
 
 // Creating checkLetter function
