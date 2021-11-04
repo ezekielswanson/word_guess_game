@@ -1,7 +1,7 @@
 
 //Variables
 const qwerty = document.getElementById('qwerty');
-const missed = 0;
+let missed = 0;
 const overlay = document.getElementById('overlay');
 const btnReset = document.querySelector('.btn__reset');
 //Can I put the overlay var inside of the event listner?
@@ -73,17 +73,17 @@ addPhraseToDisplay(randomPhrase);
 
 // Creating checkLetter function
  
-const checkLetter = (button) => {
-   const letterClass = document.getElementByClassName('letter');
+function checkLetter(button) {
+   const letterClass = document.getElementsByClassName('letter');
    letterMatch = null;
  
    //Are we looping through the letterClass list?
    for (let i = 0; i < letterClass.length; i++) {
-
-       if ( letterClass[i].textContent === button.textContent ) {
+       if ( letterClass[i].textContent === button ) {
            letterClass.classList.add('show');
            const match = letterClass;
            return match;
+
        }
 
        else {
@@ -105,21 +105,43 @@ const checkLetter = (button) => {
 
 qwerty.addEventListener('click', (e) => {
 
+    //Ref class name and tag name  b/c it's more specific 
+    const img = document.querySelectorAll('.tries img');
+    //set var before if statements 
+    //b/c it only runs spec code for the if statements 
+
     if (e.target.tagName === 'button') {
-        //Where does button come into play on the method?
-        e.taget.tagName.classList.add('chosen');
+        e.target.tagName.classList.add('chosen');
     }
+
 
     const selectedButton = checkLetter();
 
-    if ( selectedButton !== 'button' ) {
-        document.getElementsByTagName('img').remove();
-        missed += 1;
+    //save the hearts w/in a loop
+    /* anytime you have mulitples of something do an array node list 
+    make var and loop through it 
+    querySelector all gets list and tech makes it an array
+    ex: li use arrays or node lists
+    to delete one at a time instead of the whole list
+    */
+
+    /*
+    if you only need use var inside of this condit 
+    use theim in the function
+    if you need them
+
+    */
+
+    for ( let i=0; i < img.length; i++ ) {
+        if ( selectedButton !== 'button' ) {
+            img[i].remove();
+            missed += 1;
+        }
     }
 
 });
 
-//Why doesn't this have a parameter?
+//Why doesn't this have a parameter
 const checkWin = () => {
     const letterClassMatch = 'letter';
     const showClassMatch = 'show';
@@ -134,9 +156,11 @@ const checkWin = () => {
     if ( missed > 4 ) {
         overlay.className.add('lose');
         document.getElementByClassName("title").innerHTML = "You lost!";
-      overlay.style.display = "flex";
+        overlay.style.display = "flex";
 
     }
+
+    console.log('this works');
 
 }
 
