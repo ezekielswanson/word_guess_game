@@ -89,6 +89,8 @@ function checkLetter(button) {
        else {
            return null;
        }
+
+       console.log('this works');
     
    };
 }
@@ -110,8 +112,9 @@ qwerty.addEventListener('click', (e) => {
     //set var before if statements 
     //b/c it only runs spec code for the if statements 
 
-    if (e.target.tagName === 'button') {
-        e.target.tagName.classList.add('chosen');
+    //Using button b/c tagName proper is uppercase
+    if (e.target.tagName === 'BUTTON') {
+        e.target.classList.add('chosen');
     }
 
 
@@ -138,6 +141,8 @@ qwerty.addEventListener('click', (e) => {
             missed += 1;
         }
     }
+
+    console.log('this works');
 
 });
 
