@@ -115,6 +115,7 @@ qwerty.addEventListener('click', (e) => {
     //Using button b/c tagName proper is uppercase
     if (e.target.tagName === 'BUTTON') {
         e.target.classList.add('chosen');
+        
     }
 
 
