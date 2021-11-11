@@ -89,8 +89,6 @@ function checkLetter(button) {
        else {
            return null;
        }
-
-       console.log('this works');
     
    };
 }
@@ -137,13 +135,33 @@ qwerty.addEventListener('click', (e) => {
     */
 
     for ( let i=0; i < img.length; i++ ) {
-        if ( selectedButton !== 'button' ) {
-            img[i].remove();
-            missed += 1;
-        }
-    }
+        if ( selectedButton !== 'BUTTON' ) {
 
-    console.log('this works');
+            if (missed === 1) {
+            img[4].src = 'images/lostHeart.png';
+
+            } else if (missed === 2) {
+                img[3].src = 'images/lostHeart.png';
+
+                } else if (missed === 3) {
+                    img[2].src = 'images/lostHeart.png';
+                    
+                    }  else if (missed === 4) {
+                        img[1].src = 'images/lostHeart.png';
+                        
+                        } else if (missed === 5) {
+                            img[0].src = 'images/lostHeart.png';
+                            
+                            }
+
+                 }
+
+    }
+    missed += 1;
+    console.log(missed);
+ 
+   
+    
 
 });
 
