@@ -138,30 +138,26 @@ qwerty.addEventListener('click', (e) => {
         if ( selectedButton !== 'BUTTON' ) {
 
             if (missed === 1) {
-            img[4].src = 'images/lostHeart.png';
+            img[0].src = 'images/lostHeart.png';
 
             } else if (missed === 2) {
-                img[3].src = 'images/lostHeart.png';
+                img[1].src = 'images/lostHeart.png';
 
                 } else if (missed === 3) {
                     img[2].src = 'images/lostHeart.png';
                     
                     }  else if (missed === 4) {
-                        img[1].src = 'images/lostHeart.png';
+                        img[3].src = 'images/lostHeart.png';
                         
                         } else if (missed === 5) {
-                            img[0].src = 'images/lostHeart.png';
+                            img[4].src = 'images/lostHeart.png';
                             
                             }
-
                  }
 
     }
     missed += 1;
-    console.log(missed);
- 
-   
-    
+
 
 });
 
@@ -170,7 +166,7 @@ const checkWin = () => {
     const letterClassMatch = 'letter';
     const showClassMatch = 'show';
 
-    if ( letterClassMatch === showClassMatch ) {
+    if ( letterClassMatch.length === showClassMatch.length ) {
         overlay.className.add('win');
         //change this 
         document.getElementByClassName("title").innerHTML = "You won!";
@@ -183,8 +179,6 @@ const checkWin = () => {
         overlay.style.display = "flex";
 
     }
-
-    console.log('this works');
 
 }
 
