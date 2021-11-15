@@ -75,25 +75,21 @@ addPhraseToDisplay(randomPhrase);
  
 function checkLetter(button) {
    const letterClass = document.getElementsByClassName('letter');
-   letterMatch = null;
+   match = null;
  
    //Are we looping through the letterClass list?
    for (let i = 0; i < letterClass.length; i++) {
        if ( letterClass[i].textContent === button ) {
            letterClass.classList.add('show');
            const match = letterClass;
-           return match;
-
        }
 
-       else {
-           return null;
-       }
-    
+  
    };
+   
+   return match;
 }
 
-//What argument do I pass to this function? or do we pass anything to it?
 //We're not passing an argument into this function because letterClass 
 //using the data from the array
 
@@ -116,8 +112,8 @@ qwerty.addEventListener('click', (e) => {
         
     }
 
-
-    const selectedButton = checkLetter();
+    //passing what letter was clicked as an arugment
+    const selectedButton = checkLetter(e.target.textContent);
 
     //save the hearts w/in a loop
     /* anytime you have mulitples of something do an array node list 
