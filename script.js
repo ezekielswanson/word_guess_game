@@ -75,23 +75,22 @@ addPhraseToDisplay(randomPhrase);
  
 function checkLetter(button) {
    const letterClass = document.getElementsByClassName('letter');
-   match = null;
+   let match = null;
  
-   //Are we looping through the letterClass list?
-   for (let i = 0; i < letterClass.length; i++) {
-       if ( letterClass[i].textContent === button ) {
-           letterClass.classList.add('show');
-           const match = letterClass;
-       }
 
+   for (let i = 0; i < letterClass.length; i++) {
+       if ( letterClass[i].textContent.toLowerCase() === button ) {
+           letterClass[i].classList.add('show');
+           match = letterClass.textContent;
+       }
   
    };
-   
+
    return match;
 }
 
-//We're not passing an argument into this function because letterClass 
-//using the data from the array
+/*We're not passing an argument into this function because letterClass 
+using the data from the array*/
 
 
 
@@ -108,35 +107,25 @@ qwerty.addEventListener('click', (e) => {
 
     //Using button b/c tagName proper is uppercase
     if (e.target.tagName === 'BUTTON') {
+
         e.target.classList.add('chosen');
         
     }
 
     //passing what letter was clicked as an arugment
-    const selectedButton = checkLetter(e.target.textContent);
+    const selectedButton = checkLetter(e.target.textContent.toLowerCase());
 
-    //save the hearts w/in a loop
-    /* anytime you have mulitples of something do an array node list 
-    make var and loop through it 
-    querySelector all gets list and tech makes it an array
-    ex: li use arrays or node lists
-    to delete one at a time instead of the whole list
-    */
+    if ( selectedButton != 'BUTTON') {
+        missed += 1;
+    }
 
-    /*
-    if you only need use var inside of this condit 
-    use theim in the function
-    if you need them
-
-    */
-
-    for ( let i=0; i < img.length; i++ ) {
-        if ( selectedButton !== 'BUTTON' ) {
+        for ( let i=0; i < img.length; i++ ) {
 
             if (missed === 1) {
             img[0].src = 'images/lostHeart.png';
+                }
 
-            } else if (missed === 2) {
+             else if (missed === 2) {
                 img[1].src = 'images/lostHeart.png';
 
                 } else if (missed === 3) {
@@ -148,37 +137,6 @@ qwerty.addEventListener('click', (e) => {
                         } else if (missed === 5) {
                             img[4].src = 'images/lostHeart.png';
                             
-                            }
-                 }
-
-    }
-    missed += 1;
-
-
-});
-
-//Why doesn't this have a parameter
-const checkWin = () => {
-    const letterClassMatch = 'letter';
-    const showClassMatch = 'show';
-
-    if ( letterClassMatch.length === showClassMatch.length ) {
-        overlay.className.add('win');
-        //change this 
-        document.getElementByClassName("title").innerHTML = "You won!";
-        overlay.style.display = "flex";
-    }
-
-    if ( missed > 4 ) {
-        overlay.className.add('lose');
-        document.getElementByClassName("title").innerHTML = "You lost!";
-        overlay.style.display = "flex";
-
-    }
-
-}
-
-
-
-
-
+                        }
+                    }
+                }
