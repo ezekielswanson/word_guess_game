@@ -93,8 +93,6 @@ function checkLetter(button) {
 using the data from the array*/
 
 
-
-
 //Creating event listner 
 //Using e because we want target the button elemenet only 
 
@@ -117,7 +115,7 @@ qwerty.addEventListener('click', (e) => {
 
     if ( selectedButton != 'BUTTON') {
         missed += 1;
-    }
+    
 
         for ( let i=0; i < img.length; i++ ) {
 
