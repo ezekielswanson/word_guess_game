@@ -107,8 +107,9 @@ qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON') {
 
         e.target.classList.add('chosen');
-        
     }
+        
+    });
 
     //passing what letter was clicked as an arugment
     const selectedButton = checkLetter(e.target.textContent.toLowerCase());
@@ -137,4 +138,7 @@ qwerty.addEventListener('click', (e) => {
                             
                         }
                     }
-                }
+                };
+        
+
+   
