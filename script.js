@@ -81,7 +81,7 @@ function checkLetter(button) {
    for (let i = 0; i < letterClass.length; i++) {
        if ( letterClass[i].textContent.toLowerCase() === button ) {
            letterClass[i].classList.add('show');
-           match = letterClass.textContent;
+           match = letterClass[i].textContent;
        }
   
    };
@@ -108,37 +108,59 @@ qwerty.addEventListener('click', (e) => {
 
         e.target.classList.add('chosen');
     }
+
+     //passing what letter was clicked as an arugment
+     const selectedButton = checkLetter(e.target.textContent.toLowerCase());
+
+     if ( selectedButton != 'BUTTON') {
+         missed += 1;
+     
+ 
+         for ( let i=0; i < img.length; i++ ) {
+ 
+             if (missed === 1) {
+             img[0].src = 'images/lostHeart.png';
+                 }
+ 
+              else if (missed === 2) {
+                 img[1].src = 'images/lostHeart.png';
+ 
+                 } else if (missed === 3) {
+                     img[2].src = 'images/lostHeart.png';
+                     
+                     }  else if (missed === 4) {
+                         img[3].src = 'images/lostHeart.png';
+                         
+                         } else if (missed === 5) {
+                             img[4].src = 'images/lostHeart.png';
+                             
+                         }
+                     }
+                 };
         
     });
 
-    //passing what letter was clicked as an arugment
-    const selectedButton = checkLetter(e.target.textContent.toLowerCase());
+//Why doesn't this have a parameter
+const checkWin = () => {
+    const letterClassMatch = 'letter';
+    const showClassMatch = 'show';
+  
+    if ( letterClassMatch.length === showClassMatch.length ) {
+        overlay.className.add('win');
+        //change this
+        document.getElementByClassName("title").innerHTML = "You won!";
+        overlay.style.display = "flex";
+    }
+  
+    if ( missed > 4 ) {
+        overlay.className.add('lose');
+        document.getElementByClassName("title").innerHTML = "You lost!";
+        overlay.style.display = "flex";
+    }
+ }
+ 
 
-    if ( selectedButton != 'BUTTON') {
-        missed += 1;
-    
 
-        for ( let i=0; i < img.length; i++ ) {
 
-            if (missed === 1) {
-            img[0].src = 'images/lostHeart.png';
-                }
-
-             else if (missed === 2) {
-                img[1].src = 'images/lostHeart.png';
-
-                } else if (missed === 3) {
-                    img[2].src = 'images/lostHeart.png';
-                    
-                    }  else if (missed === 4) {
-                        img[3].src = 'images/lostHeart.png';
-                        
-                        } else if (missed === 5) {
-                            img[4].src = 'images/lostHeart.png';
-                            
-                        }
-                    }
-                };
-        
 
    
