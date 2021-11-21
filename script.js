@@ -104,7 +104,7 @@ qwerty.addEventListener('click', (e) => {
     //b/c it only runs spec code for the if statements 
 
     //Using button b/c tagName proper is uppercase
-    if (e.target.tagName === 'BUTTON') {
+    if (e.target.tagName === 'BUTTON' && !e.target.classList.contains("chosen")) {
 
         e.target.classList.add('chosen');
     }
@@ -112,7 +112,7 @@ qwerty.addEventListener('click', (e) => {
      //passing what letter was clicked as an arugment
      const selectedButton = checkLetter(e.target.textContent.toLowerCase());
 
-     if ( selectedButton != 'BUTTON') {
+     if ( !selectedButton ) {
          missed += 1;
      
  
@@ -137,24 +137,24 @@ qwerty.addEventListener('click', (e) => {
                          }
                      }
                  };
-        
+                 
+                 checkWin()
     });
 
-//Why doesn't this have a parameter
 const checkWin = () => {
-    const letterClassMatch = 'letter';
-    const showClassMatch = 'show';
+    const letterClassMatch = document.querySelector('.letter');
+    const showClassMatch = document.querySelector(".show");
+    let messageDisplay = document.querySelector(".title");
   
     if ( letterClassMatch.length === showClassMatch.length ) {
-        overlay.className.add('win');
-        //change this
-        document.getElementByClassName("title").innerHTML = "You won!";
+        overlay.className = 'win';
+        messageDisplay.innerHTML = "You've won!";
         overlay.style.display = "flex";
     }
   
     if ( missed > 4 ) {
-        overlay.className.add('lose');
-        document.getElementByClassName("title").innerHTML = "You lost!";
+        overlay.className = 'lose';
+        messageDisplay.innerHTML = "You lost!";
         overlay.style.display = "flex";
     }
  }
