@@ -142,8 +142,8 @@ qwerty.addEventListener('click', (e) => {
     });
 
 const checkWin = () => {
-    const letterClassMatch = document.querySelector('.letter');
-    const showClassMatch = document.querySelector(".show");
+    const letterClassMatch = document.getElementsByClassName('letter');
+    const showClassMatch = document.getElementsByClassName("show");
     let messageDisplay = document.querySelector(".title");
   
     if ( letterClassMatch.length === showClassMatch.length ) {
