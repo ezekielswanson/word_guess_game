@@ -13,7 +13,7 @@ btnReset.addEventListener('click', ()=> {
 
 
 //Phrases array 
-const phrases = ['Apples to Oranges', 'The day is young', "If you're not first you're last", 'Ricky Bobby', "The early bird get's the worm"]
+const phrases = ['Apples to Oranges', 'The day is young', "If you are not first you are last", 'Ricky Bobby', "The early bird gets the worm"]
 
 //Creating a function to select an val from array at random
 getRandomPhraseAsArray = (arr) => {
@@ -107,6 +107,12 @@ qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON' && !e.target.classList.contains("chosen")) {
 
         e.target.classList.add('chosen');
+    }
+
+    //New line of code
+    const outsideClick = $(event.target)
+    if (outsideClick != 'button') {
+        clearTimeout(selectedButton);
     }
 
      //passing what letter was clicked as an arugment
