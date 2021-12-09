@@ -107,16 +107,14 @@ qwerty.addEventListener('click', (e) => {
     if (e.target.tagName === 'BUTTON' && !e.target.classList.contains("chosen")) {
 
         e.target.classList.add('chosen');
-    }
-
-    //New line of code
-    const outsideClick = $(event.target)
-    if (outsideClick != 'button') {
-        clearTimeout(selectedButton);
-    }
-
+   
+   
      //passing what letter was clicked as an arugment
      const selectedButton = checkLetter(e.target.textContent.toLowerCase());
+
+     if (selectedButton) {
+         document.getElementsByTagName('button').disabled = true;
+     }
 
      if ( !selectedButton ) {
          missed += 1;
@@ -143,6 +141,8 @@ qwerty.addEventListener('click', (e) => {
                          }
                      }
                  };
+
+            }
                  
                  checkWin()
     });
