@@ -1,5 +1,5 @@
 
-// Globbal Variables
+// Global Variables
 const qwerty = document.getElementById('qwerty');
 let missed = 0;
 const overlay = document.getElementById('overlay');
@@ -8,26 +8,26 @@ const btnReset = document.querySelector('.btn__reset');
 
 
 
-//Click event to hides the start game overlay screen on load
+//Hides the start game overlay screen on window load
 btnReset.addEventListener('click', ()=> {
     overlay.style.display = 'none';
 });
 
 
-//Phrases array 
+//Random phrases array 
 const phrases = ['Apples to Oranges', 'The day is young', "If you are not first you are last", 'Ricky Bobby', "The early bird gets the worm"]
 
-//Function selects an value from the array at random
+//Function randomly selects value from the array
 getRandomPhraseAsArray = (arr) => {
     const randomPhraseNumber = Math.floor(Math.random()*arr.length);
     return arr[randomPhraseNumber].split("");
 };
 
-//Variable to access the getRandomPhraseAsArray function
+//Variable accesses the getRandomPhraseAsArray function
 const randomPhrase = getRandomPhraseAsArray(phrases);
 
 
-// Function displays the randmonly selected array phrase
+//Function displays the randmonly selected array phrase
 const addPhraseToDisplay = (arr) => {
 
         for (let i = 0; i < arr.length; i++) {
@@ -58,7 +58,7 @@ addPhraseToDisplay(randomPhrase);
 
 
 
-//Function checks if user button clicks on a button that matches the random phrase
+//Function checks if user clicks on a button that matches the random phrase
 function checkLetter(button) {
    const letterClass = document.getElementsByClassName('letter');
    let match = null;
@@ -76,7 +76,9 @@ function checkLetter(button) {
 }
 
 
-//Click event/function removes a heart at the bottom of the screen if user selects wong button
+/*Click event/function removes a heart at the bottom of the screen if user selects a button
+that does not match a letter in the phrase
+*/
 qwerty.addEventListener('click', (e) => {
 
     const img = document.querySelectorAll('.tries img');
@@ -125,7 +127,7 @@ qwerty.addEventListener('click', (e) => {
     });
 
 
-/*Function shows win overlay if user guesses phrase right and lose overlay if user
+/*Function shows win overlay if user guesses phrase correct and lose overlay if user
 does guess phrase correct
 */
 const checkWin = () => {
