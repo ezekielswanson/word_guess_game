@@ -1,12 +1,14 @@
 
-//Variables
+// Globbal Variables
 const qwerty = document.getElementById('qwerty');
 let missed = 0;
 const overlay = document.getElementById('overlay');
 const btnReset = document.querySelector('.btn__reset');
-//Can I put the overlay var inside of the event listner?
 
-//Creating event listner to hide start game overlay screen
+
+
+
+//Click event to hides the start game overlay screen on load
 btnReset.addEventListener('click', ()=> {
     overlay.style.display = 'none';
 });
